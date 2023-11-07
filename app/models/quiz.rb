@@ -1,4 +1,4 @@
 class Quiz < ApplicationRecord
-  belongs_to :topic
+  belongs_to :subject
   has_many :questions
 end
