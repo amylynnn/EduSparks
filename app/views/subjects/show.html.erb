@@ -1,2 +1,11 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<h1>Topics</h1>
+<h2><%= @subject.name %></h2>
+<br>
+<div class="container">
+  <% @quizzes.each do |quiz| %>
+    <div>
+      <h3><%= quiz.name %></h3>
+      <%= link_to "Start", quiz_path(quiz), class: "btn btn-outline-primary" %>
+    </div>
+  <% end %>
+</div>
