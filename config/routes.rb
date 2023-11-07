@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'quizzes/show'
-  get 'topics/index'
-  get 'topics/show'
   devise_for :users
   root to: "subjects#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,5 +10,7 @@ Rails.application.routes.draw do
     resources :quizzes, only: %i[index]
   end
 
-  resources :quizzes, only: %i[show]
+  resources :quizzes, only: %i[show] do
+    resources :questions, only: %i[show]
+  end
 end
