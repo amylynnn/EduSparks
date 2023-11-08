@@ -1,1 +1,56 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  background-color:rgba(195, 191, 251, 0.21);
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 96px;
+  font-weight: extrabold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.banner p {
+  font-size: 16px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: regular;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #7749F8;
+  transition: background 0.3s ease;
+  font-family: 'inter', sans-serif;
+  font-weight: semi-bold
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold
+
+}
+
+.card-subject-infos {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 373px;
+    height: 150px;
+    margin: 20px;
+    background: linear-gradient(to right, #BBAACC, #FF9081);
+}
