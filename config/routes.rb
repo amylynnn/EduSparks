@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :quizzes, only: %i[show] do
     resources :questions, only: %i[show]
   end
+  get '/about', to: 'pages#about', as: 'about'
 end
