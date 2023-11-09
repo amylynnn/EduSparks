@@ -5,7 +5,15 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subject = Subject.find(params[:id])
-    @quizzes = @subject.quizzes
+    # @subject = Subject.find(params[:id])
+    # @quizzes = @subject.quizzes
+    @subject = Subject.find_by(id: params[:id])
+    if @subject.nil?
+      # si Sujet non trouvé, rediriger vers une autre action
+      redirect_to subjects_path
+    else
+      # Sujet trouvé, récuperer les quiz associés
+      @quizzes = @subject.quizzes
+    end
   end
 end
