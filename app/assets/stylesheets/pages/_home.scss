@@ -5,7 +5,9 @@
   }
 }
 
-
+.container {
+  margin: 100px 0;
+}
 
 
 .banner {
@@ -13,7 +15,6 @@
   background-color:#EBD6FF;
   background-image: url('home-banner-img.png');
   padding: 150px 0;
-  height: 650px;
 }
 
 .banner h1 {
@@ -38,7 +39,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #7749F8;
+  background: #5300A6;
   transition: background 0.3s ease;
   font-family: 'inter', sans-serif;
   font-weight: semi-bold
