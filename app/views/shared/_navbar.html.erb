@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= image_tag "https://cdn-icons-png.flaticon.com/256/3145/3145765.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,18 +12,20 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Subjects ", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Quizzes", "#", class: "nav-link" %>
           </li>
+
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "data:image/jpeg;base64,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", class: "avatar", alt: "dropdown menu" %>
           </a>
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "profile", "#", class: "dropdown-item" %>
+              <%= link_to "---", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
