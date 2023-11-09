@@ -1,25 +1,27 @@
 <div class="container">
   <h1 class="mb-3"><%= @quiz.name %></h1>
-  <%# <ul> %>
-    <%# <% @questions.each do |question| %>
-      <%# <div class="card-quiz-infos"> %>
-      <%# <%= link_to question.content, quiz_question_path(@quiz, question) %>
-      <%# </div> %>
-    <%# <% end %>
-  <%# </ul> %>
-
+</div>
+<div class="container">
+  <div class="card-quiz-container">
   <%= form_tag(submit_quiz_path(@quiz), method: :post) do %>
-  <% @questions.each do |question| %>
-
+    <div class="card-quiz-question py-3">
+    <% @questions.each do |question| %>
       <legend><%= question.content %></legend>
+    </div>
+    <div class="card-quiz-answer py-3">
       <% question.answers.each do |answer| %>
         <label>
           <%= radio_button_tag("answers_#{question.id}", answer.correct) %>
           <%= answer.content %>
         </label>
       <% end %>
-
+    </div>
     <% end %>
-    <%= link_to "Submit", class: "btn btn-outline-primary"  %>
+    <div class="class mx-2 py-3">
+    <%= link_to "Previous", quiz_path, class: "btn btn-outline-primary"  %>
+    <%= link_to "Next", quiz_path, class: "btn btn-outline-primary"  %>
+    </div>
+
   <% end %>
+  </div>
 </div>
