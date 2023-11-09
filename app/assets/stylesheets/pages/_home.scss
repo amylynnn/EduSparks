@@ -1,1 +1,95 @@
 // Specific CSS for your home-page
+.container-fluid {
+  .nav-link {
+    color:#FFFFFF;
+  }
+}
+
+
+
+
+.banner {
+  background-size: cover;
+  background-color:#EBD6FF;
+  background-image: url('home-banner-img.png');
+  padding: 150px 0;
+  height: 650px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 96px;
+  font-weight: extrabold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.banner p {
+  font-size: 16px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: regular;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #7749F8;
+  transition: background 0.3s ease;
+  font-family: 'inter', sans-serif;
+  font-weight: semi-bold
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold
+
+}
+
+.card-subject-infos {
+    border: 1px solid #ccc;
+    border-radius: 11px;
+    width: 370px;
+    height: 150px;
+    margin: 20px;
+    // background: rgb(83,0,166);
+    // background: linear-gradient(180deg, rgba(83,0,166,1) 20%, rgba(93,169,233,1) 100%);
+    background: linear-gradient(150deg, rgba(93,169,233,1), rgba(83,0,166,1) 100%);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.card-subjects-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .card-subject {
+    min-width: 300px;
+    text-decoration: none;
+  }
+}
+
+.card-topics {
+  border: 1px #ccc;
+  border-radius: 11px;
+  width: 370px;
+  height: 220px;
+  margin: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

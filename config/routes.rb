@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :quizzes, only: %i[show] do
     resources :questions, only: %i[show]
   end
+
   post 'quizzes/:id/submit', to: 'quizzes#submit', as: :submit_quiz
   get 'results', to: 'quizzes#results', as: :results
+
+  resources :pages, only: %i[about]
+
 end
