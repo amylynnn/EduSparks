@@ -1,0 +1,57 @@
+.container-quiz {
+  background-color: #EBD6FF;
+}
+
+.card-quiz {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px 20px;
+}
+
+.multiple-choice-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+.radio-input {
+  display: none; /* Hide the default radio button */
+}
+.radio-input:checked + .answer-content {
+  background-color: #007BFF; /* Change the background color when selected */
+  color: #fff; /* Change the text color when selected */
+}
+/* Additional styling can be added for hover and focus effects */
+.radio-input:hover + .answer-content {
+  background-color: #F0F0F0; /* Change background color on hover */
+}
+.radio-input:focus + .answer-content {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Add focus styling */
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #F0F0F0;
+  height: 20px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #007BFF;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+.progress-text {
+  display: inline-block;
+  margin-left: 10px;
+}
+.question-progress-text {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+
+
+

@@ -1,23 +1,55 @@
-<div class="container">
-  <h1 class="mt-3"><%= @quiz.name %></h1>
-</div>
+<div class="container-quiz py-5">
+  <div class="card mx-auto bg-light" style="width: 70rem;">
+    <h2><%= @quiz.name %></h2>
 
-<div class="container">
-  <div class="card-quiz-container py-3">
-    <%= form_tag(submit_quiz_path(@quiz), method: :post) do %>
-      <% @questions.each do |question| %>
-        <div class="card-quiz-question pb-5">
-          <legend><%= question.content %></legend>
-        </div>
 
-        <div class="card-quiz-answer py-3">
+
+    <div class="card-quiz">
+  <%= form_tag(submit_quiz_path(@quiz), method: :post, id: "quiz-form") do %>
+    <div class="progress-bar">
+      <div class="progress" id="progress-bar"></div>
+      <span class="progress-text" id="progress-text">0%</span>
+    </div>
+    <% @questions.each_with_index do |question, index| %>
+      <fieldset>
+        <legend><%= question.content %></legend>
+        <div class="question-content">
           <% question.answers.each do |answer| %>
-            <label>
-              <%= radio_button_tag("answers_#{question.id}", answer.id) %>
-              <%= answer.content %>
-            </label>
+            <div class="multiple-choice-box">
+              <label>
+                <%= radio_button_tag("answers_#{question.id}", answer.id, false, class: "radio-input") %>
+                <span class="answer-content"><%= answer.content %></span>
+              </label>
+            </div>
           <% end %>
         </div>
+
+        <div class="question-progress">
+          <span class="question-progress-text" id="progress-question-<%= index %>">0%</span>
+        </div>
+      </fieldset>
+    <% end %>
+    <div class="card-link py-3">
+      <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary" %>
+      <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary" %>
+    </div>
+  <% end %>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="py-3">
         <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary"  %>
