@@ -1,12 +1,14 @@
-<h1>Quiz Results</h1>
-<p> Congratulations, your score : <%= @score %></p>
+<div class="container">
+  <h1 class="mb-3">Quiz Results</h1>
 
-<h2>Good answers :</h2>
-<ul>
-  <% @correct_answers.each do |correct_answer| %>
-    <li><%= Answer.find(correct_answer).content %></li>
-  <% end %>
-</ul>
+  <p>Congratulations, your Score: <%= @score %></p>
 
+  <h2>Correct Answers:</h2>
+  <ul>
+    <% @correct_answers.each do |correct_answer| %>
+      <li><%= Answer.find(answer_id).content %></li>
+    <% end %>
+  </ul>
 <%= link_to "Try again", quiz_path, class: "btn btn-outline-primary"  %>
 <%= link_to "Back to Topics", subject_path, class: "btn btn-outline-primary"  %>
+</div>
