@@ -18,21 +18,14 @@
             </label>
           <% end %>
         </div>
-      <% end %>
 
       <div class="py-3">
         <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary"  %>
         <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary"  %>
+
       </div>
-    <% end %>
+      <% end %>
+      <% end %>
+
   </div>
 </div>
- <%# <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
-
-  <%# <% if current_question_index.present? && current_question_index > 0 %>
-    <%# <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id, id: @questions[current_question_index - 1].id), class: "btn btn-outline-primary" %>
-  <%# <% end %>
-
-  <%# <% if current_question_index.present? && current_question_index < @questions.length - 1 %>
-    <%# <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id, id: @questions[current_question_index + 1].id), class: "btn btn-outline-primary" %>
-  <%# <% end %>
