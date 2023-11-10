@@ -1,27 +1,38 @@
 <div class="container">
-  <h1 class="mb-3"><%= @quiz.name %></h1>
+  <h1 class="mt-3"><%= @quiz.name %></h1>
 </div>
-<div class="container">
-  <div class="card-quiz-container">
-  <%= form_tag(submit_quiz_path(@quiz), method: :post) do %>
-    <div class="card-quiz-question py-3">
-    <% @questions.each do |question| %>
-      <legend><%= question.content %></legend>
-    </div>
-    <div class="card-quiz-answer py-3">
-      <% question.answers.each do |answer| %>
-        <label>
-          <%= radio_button_tag("answers_#{question.id}", answer.correct) %>
-          <%= answer.content %>
-        </label>
-      <% end %>
-    </div>
-    <% end %>
-    <div class="class mx-2 py-3">
-    <%= link_to "Previous", quiz_path, class: "btn btn-outline-primary"  %>
-    <%= link_to "Next", quiz_path, class: "btn btn-outline-primary"  %>
-    </div>
 
-  <% end %>
+<div class="container">
+  <div class="card-quiz-container py-3">
+    <%= form_tag(submit_quiz_path(@quiz), method: :post) do %>
+      <% @questions.each do |question| %>
+        <div class="card-quiz-question pb-5">
+          <legend><%= question.content %></legend>
+        </div>
+
+        <div class="card-quiz-answer py-3">
+          <% question.answers.each do |answer| %>
+            <label>
+              <%= radio_button_tag("answers_#{question.id}", answer.id) %>
+              <%= answer.content %>
+            </label>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="py-3">
+        <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary"  %>
+        <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary"  %>
+      </div>
+    <% end %>
   </div>
 </div>
+ <%# <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
+
+  <%# <% if current_question_index.present? && current_question_index > 0 %>
+    <%# <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id, id: @questions[current_question_index - 1].id), class: "btn btn-outline-primary" %>
+  <%# <% end %>
+
+  <%# <% if current_question_index.present? && current_question_index < @questions.length - 1 %>
+    <%# <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id, id: @questions[current_question_index + 1].id), class: "btn btn-outline-primary" %>
+  <%# <% end %>
