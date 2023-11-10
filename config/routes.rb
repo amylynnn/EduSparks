@@ -11,6 +11,5 @@ Rails.application.routes.draw do
   post 'quizzes/:id/submit', to: 'quizzes#submit', as: :submit_quiz
   get 'results', to: 'quizzes#results', as: :results
 
-  resources :pages, only: %i[about]
-
+  get 'about', to: 'pages#about'
 end

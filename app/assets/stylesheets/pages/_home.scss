@@ -6,7 +6,8 @@
 }
 
 .container {
-  margin: 100px 0;
+  margin: 100px auto;
+  align-items: center;
 }
 
 
@@ -15,6 +16,7 @@
   background-color:#EBD6FF;
   background-image: url('home-banner-img.png');
   padding: 150px 0;
+  height:650px;
 }
 
 .banner h1 {
@@ -52,7 +54,8 @@
 
 h1 {
   font-family: 'Open Sans', sans-serif;
-  font-weight: bold
+  font-weight: bold;
+  color: #31081F;
 
 }
 
@@ -64,7 +67,7 @@ h1 {
     margin: 20px;
     // background: rgb(83,0,166);
     // background: linear-gradient(180deg, rgba(83,0,166,1) 20%, rgba(93,169,233,1) 100%);
-    background: linear-gradient(150deg, rgba(93,169,233,1), rgba(83,0,166,1) 100%);
+    background: linear-gradient(150deg, rgba(93,169,233,1),  rgba(83,0,166,1) 100%);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     text-align: center;
@@ -73,12 +76,19 @@ h1 {
     color: #FFFFFF;
     font-size: 40px;
     font-weight: bold;
+    transition: transform 0.3s ease-in-out;
 }
+
+.card-subject-infos:hover {
+    transform: translateY(-5px);
+}
+
 
 .card-subjects-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  align-items: center;
 
   .card-subject {
     min-width: 300px;

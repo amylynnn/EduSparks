@@ -9,6 +9,7 @@
 
 <div class="container">
   <h1 class="mb-3">Subjects</h1>
+  <br>
   <div class="card-subjects-container">
     <% @subjects.each do |subject| %>
       <%= link_to subject_path(subject), class: 'card-subject' do %>
@@ -25,3 +26,4 @@
   <div class="card-topics">
   </div>
 </div>
+
