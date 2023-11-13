@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @subjects = Subject.all
   end
@@ -8,6 +9,8 @@ class SubjectsController < ApplicationController
     # @subject = Subject.find(params[:id])
     # @quizzes = @subject.quizzes
     @subject = Subject.find_by(id: params[:id])
+    @response = chatgpt_call("test")
+
     if @subject.nil?
       # si Sujet non trouvé, rediriger vers une autre action
       redirect_to subjects_path
@@ -15,5 +18,19 @@ class SubjectsController < ApplicationController
       # Sujet trouvé, récuperer les quiz associés
       @quizzes = @subject.quizzes
     end
+  end
+
+  private
+
+  def chatgpt_call(message)
+    options = {
+      headers: {
+        'Content-Type' => 'application/json',
+        'Authorization' => "Bearer #{ENV.fetch('GPT_API_KEY')}"
+      }
+    }
+    body = { model: 'gpt-3.5-turbo', messages: [{ role: 'user', content: message }] }
+
+    return HTTParty.post('https://api.openai.com/v1/chat/completions', body: body.to_json, headers: options[:headers])
   end
 end

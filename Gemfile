@@ -82,3 +82,5 @@ end
 gem "cloudinary"
 
 gem 'chatgpt-ruby'
+
+gem "httparty"
