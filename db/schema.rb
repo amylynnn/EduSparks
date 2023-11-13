@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_113537) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_070758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answered_questions", force: :cascade do |t|
+    t.bigint "result_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "user_answer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["result_id"], name: "index_answered_questions_on_result_id"
+    t.index ["user_answer_id"], name: "index_answered_questions_on_user_answer_id"
+    t.index ["user_id"], name: "index_answered_questions_on_user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.string "content"
@@ -39,10 +50,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_113537) do
     t.index ["subject_id"], name: "index_quizzes_on_subject_id"
   end
 
+  create_table "results", force: :cascade do |t|
+    t.bigint "quiz_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quiz_id"], name: "index_results_on_quiz_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_answers", force: :cascade do |t|
+    t.bigint "answer_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["answer_id"], name: "index_user_answers_on_answer_id"
+    t.index ["user_id"], name: "index_user_answers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,7 +86,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_113537) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answered_questions", "results"
+  add_foreign_key "answered_questions", "user_answers"
+  add_foreign_key "answered_questions", "users"
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "quizzes"
   add_foreign_key "quizzes", "subjects"
+  add_foreign_key "results", "quizzes"
+  add_foreign_key "results", "users"
+  add_foreign_key "user_answers", "answers"
+  add_foreign_key "user_answers", "users"
 end
