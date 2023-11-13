@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     resources :questions, only: %i[show]
   end
 
-  post 'quizzes/:id/submit', to: 'quizzes#submit', as: :submit_quiz
-  get 'results', to: 'quizzes#results', as: :results
+  resources :results, only: %i[show]
+
+  resources :questions, except: %i[index show create new destroy update edit] do
+    resources :user_answers, only: %i[create update]
+  end
 
   get 'about', to: 'pages#about'
 end

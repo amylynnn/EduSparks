@@ -10,7 +10,8 @@ class QuizzesController < ApplicationController
     else
       # Quiz trouvé, récuperer les questions associées
       @questions = @quiz.questions
-      Result.create(user: current_user, quiz: @quiz)
+      @result = Result.find_by(user: current_user, quiz: @quiz)
+      Result.create(user: current_user, quiz: @quiz) unless @result.present?
     end
   end
 

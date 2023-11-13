@@ -5,20 +5,10 @@
   <p>Question: <%= @question.content %></p>
 
   <h2 class="mb-3">Answers:</h2>
-  <% @answers.each do |answer| %>
-    <p><%= answer.content %> (<%= answer.correct ? 'Correct' : 'Incorrect' %>)</p>
+  <%= simple_form_for [@question, @user_answer] do |f| %>
+    <%= f.input :answer, as: :radio_buttons, collection: @question.answers.map(&:content) %>
+    <%= link_to "Previous", quiz_question_path(@quiz, @question.id - 1) if @questions.index(@question) > 0 %>
+    <%= f.submit "Next" %>
   <% end %>
-
-  <div class="card-link py-3">
-    <% current_question_index = @questions.select_with_index{|question, index| question = @question} %>
-    <%= raise %>
-      <% if current_question_index.present? && current_question_index > 0 %>
-        <%= link_to "Previous", quiz_question_path(@quiz, @questions[current_question_index - 1]), class: "btn btn-outline-primary" %>
-      <% end %>
-
-      <% if current_question_index.present? && current_question_index < @questions.length - 1 %>
-        <%= link_to "Next", quiz_question_path(@quiz, @questions[current_question_index + 1]), class: "btn btn-outline-primary" %>
-      <% end %>
-  </div>
 
 </div>
