@@ -8,6 +8,9 @@ class QuestionsController < ApplicationController
       redirect_to subjects_path, alert: "Question not found."
     else
       @answers = @question.answers
+      # @question = Question.find(params[id])
+      @result = current_user.results.find_by(quiz: @quiz)
+      @user_answer = UserAnswer.new
     end
   end
 end

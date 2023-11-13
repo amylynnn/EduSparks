@@ -10,6 +10,7 @@ class QuizzesController < ApplicationController
     else
       # Quiz trouvé, récuperer les questions associées
       @questions = @quiz.questions
+      Result.create(user: current_user, quiz: @quiz)
     end
   end
 
@@ -22,18 +23,18 @@ class QuizzesController < ApplicationController
 
   def results
     # Récuperer les bonnes réponses depuis la base de données
-    correct_answers = Quiz.find(params[:quiz_id]).questions.map { |question| question.answers.find_by(correct: true).id.to_s }
+    # correct_answers = Quiz.find(params[:quiz_id]).questions.map { |question| question.answers.find_by(correct: true).id.to_s }
 
     # Récupérer les réponses soumises par l'utilisateur depuis les paramètres
-    submitted_answers = params[:submitted_answers]
+    # submitted_answers = params[:submitted_answers]
 
     # Comparer les réponses soumises avec les bonnes réponses
-    @score = submitted_answers.count { |answer| correct_answers.include?(answer) }
+    # @score = submitted_answers.count { |answer| correct_answers.include?(answer) }
 
     # Passer les détails des résultats à la vue
-    @correct_answers = correct_answers
+    # @correct_answers = correct_answers
 
     # Rediriger l'utilisateur vers la page de résultats
-    render 'results'
+    # render 'results'
   end
 end
