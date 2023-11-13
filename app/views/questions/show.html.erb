@@ -1,15 +1,24 @@
 <div class="container">
   <h1 class="mb-3">Questions</h1>
-   <p><%= @question.content %></p>
 
-  <ul>
-    <% @question.answers.each do |answer| %>
-    <div class="card-question-infos">
-      <li>
-      <%= answer.content %>
-      <%= answer.correct ? "(Correct)" : "" %>
-      </li>
-    </div>
-    <% end %>
-  </ul>
+  <p>Quiz: <%= @quiz.name %></p>
+  <p>Question: <%= @question.content %></p>
+
+  <h2 class="mb-3">Answers:</h2>
+  <% @answers.each do |answer| %>
+    <p><%= answer.content %> (<%= answer.correct ? 'Correct' : 'Incorrect' %>)</p>
+  <% end %>
+
+  <div class="card-link py-3">
+    <% current_question_index = @questions.select_with_index{|question, index| question = @question} %>
+    <%= raise %>
+      <% if current_question_index.present? && current_question_index > 0 %>
+        <%= link_to "Previous", quiz_question_path(@quiz, @questions[current_question_index - 1]), class: "btn btn-outline-primary" %>
+      <% end %>
+
+      <% if current_question_index.present? && current_question_index < @questions.length - 1 %>
+        <%= link_to "Next", quiz_question_path(@quiz, @questions[current_question_index + 1]), class: "btn btn-outline-primary" %>
+      <% end %>
+  </div>
+
 </div>
