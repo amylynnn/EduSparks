@@ -1,15 +1,14 @@
 <div class="container">
   <h1 class="mb-3">Questions</h1>
-   <p><%= @question.content %></p>
 
-  <ul>
-    <% @question.answers.each do |answer| %>
-    <div class="card-question-infos">
-      <li>
-      <%= answer.content %>
-      <%= answer.correct ? "(Correct)" : "" %>
-      </li>
-    </div>
-    <% end %>
-  </ul>
+  <p>Quiz: <%= @quiz.name %></p>
+  <p>Question: <%= @question.content %></p>
+
+  <h2 class="mb-3">Answers:</h2>
+  <%= simple_form_for [@question, @user_answer] do |f| %>
+    <%= f.input :answer, as: :radio_buttons, collection: @question.answers.map(&:content) %>
+    <%= link_to "Previous", quiz_question_path(@quiz, @question.id - 1) if @questions.index(@question) > 0 %>
+    <%= f.submit "Next" %>
+  <% end %>
+
 </div>

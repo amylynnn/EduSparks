@@ -1,6 +1,7 @@
 <div class="container-quiz py-5">
   <div class="card mx-auto bg-light" style="width: 70rem;">
     <h2><%= @quiz.name %></h2>
+    <%= link_to 'question', quiz_question_path(@quiz, @questions.first) %>
 
 
 
@@ -30,24 +31,16 @@
       </fieldset>
     <% end %>
     <div class="card-link py-3">
-      <%= link_to "Previous", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary" %>
-      <%= link_to "Next", quiz_question_path(quiz_id: @quiz.id), class: "btn btn-outline-primary" %>
+       <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
+          <% if current_question_index.present? && current_question_index > 0 %>
+            <%= link_to "Previous", quiz_question_path(@quiz, @questions[current_question_index - 1]), class: "btn btn-outline-primary" %>
+          <% end %>
+
+          <% if current_question_index.present? && current_question_index < @questions.length - 1 %>
+            <%= link_to "Next", quiz_question_path(@quiz, @questions[current_question_index + 1]), class: "btn btn-outline-primary" %>
+          <% end %>
     </div>
   <% end %>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

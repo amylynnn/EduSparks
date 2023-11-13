@@ -1,14 +1,17 @@
 class QuizzesController < ApplicationController
+  before_action :authenticate_user!, only: %i[submit results]
+
   def show
     # @quiz = Quiz.find(params[:id])
     @quiz = Quiz.find_by(id: params[:id])
     if @quiz.nil?
-      # si Quiz non trouvé, rediriger vers une autre action
-      redirect_to subject_path
+      # si Quiz non trouvé, rediriger vers la liste des sujets
+      redirect_to subjects_path, alert: 'Quiz not found.'
     else
       # Quiz trouvé, récuperer les questions associées
       @questions = @quiz.questions
-      Result.create(user: current_user, quiz: @quiz)
+      @result = Result.find_by(user: current_user, quiz: @quiz)
+      Result.create(user: current_user, quiz: @quiz) unless @result.present?
     end
   end
 
