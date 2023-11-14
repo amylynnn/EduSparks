@@ -1,6 +1,45 @@
-<h1>he;llooasd</h1>
-<div class="container">
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%= @percentage %>%</div>
+<div class="congratulations-container">
+  <div class="congratulations-box">
+    <div class="congratulations-title">
+      <% if @percentage >= 70 %>
+        Congratulations! You passed the quiz.
+      <% else %>
+       <div class="text-left">
+        Sorry, you did not pass the quiz. Better luck next time.
+        </div>
+      <% end %>
+    </div>
+    <div class="answer-info">
+      You got <%= @good_answers.count %> out of <%= @questions.count %> questions correct.
+    </div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <%= @percentage %>% <!-- Display the percentage symbol -->
+      </div>
+    </div>
+    <div class="action-buttons d-flex justify-content-center m-4 gap-4">
+  <%= link_to "http://localhost:3000/subjects/1", class: "btn btn-outline-secondary" do %>
+    Back to Topics
+  <% end %>
+  <%= link_to quiz_question_path(@quiz, @questions.first.id), class: "btn btn-outline-primary" do %>
+    Try Again
+  <% end %>
+
+</div>
+
+    <% if @percentage < 70 %>
+      <div class="correct-answers-box">
+        <h2>Correct Answers</h2>
+        <ul>
+          <% @questions.each do |question| %>
+            <li>
+              <%= question.content %>:
+              <% correct_answer = question.answers.find_by(correct: true) %>
+              <%= correct_answer ? correct_answer.content : 'No correct answer available' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </div>
