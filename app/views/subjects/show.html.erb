@@ -8,10 +8,15 @@
   <div class="card mx-auto bg-light" style="width: 70rem;">
     <div class="form-group">
     <% @quizzes.each do |quiz| %>
+
       <div class="card2-subject-infos d-flex justify-content-between p-4">
-        <h3><%= quiz.name %></h3>
+        <ul>
+          <li>
+            <h2 class="fw-bold"><%= quiz.name %></h2>
+          </li>
+        </ul>
         <div class="d-flex mx-2">
-        <%= link_to "Start", quiz_path(quiz), class: "btn btn-flat" %>
+          <%= link_to "Start", quiz_question_path(quiz, quiz.questions.first), class: "btn btn-flat" %>
         </div>
       </div>
       <% end %>
