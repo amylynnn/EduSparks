@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
     @question = @quiz.questions.find_by(id: params[:id])
     @questions = @quiz.questions
     @answers = @question.answers
-    @result = current_user.results.find_by(quiz: @quiz)
+    @result = Result.find_by(user: current_user, quiz: @quiz)
+    Result.create(user: current_user, quiz: @quiz) unless @result.present?
     if UserAnswer.find_by(question: @question).present?
       @user_answer = UserAnswer.find_by(question: @question)
     else
