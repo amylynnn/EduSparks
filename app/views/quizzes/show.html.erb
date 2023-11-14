@@ -31,7 +31,7 @@
       </fieldset>
     <% end %>
     <div class="card-link py-3">
-       <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
+      <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
           <% if current_question_index.present? && current_question_index > 0 %>
             <%= link_to "Previous", quiz_question_path(@quiz, @questions[current_question_index - 1]), class: "btn btn-outline-primary" %>
           <% end %>
