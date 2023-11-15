@@ -1,4 +1,3 @@
-require 'faker'
 
 puts 'Destroying the DB'
 Answer.destroy_all
