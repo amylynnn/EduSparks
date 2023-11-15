@@ -3,6 +3,9 @@ class SubjectsController < ApplicationController
 
   def index
     @subjects = Subject.all
+    if params[:query].present?
+      @subjects = @subjects.where("name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
