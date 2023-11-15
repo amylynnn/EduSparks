@@ -8,9 +8,9 @@
 <div class="card4 mx-auto" style="width: 40rem;">
   <div>
       <%= form_with url: subject_path(@subject), method: :get do |f| %>
-        <%= f.text_area :query, rows: 4, cols: 60, placeholder: " Ask me anything about #{@subject.name}...", class: "text-area" %>
+        <%= f.text_area :query, rows: 4, cols: 70, placeholder: " Ask me anything about #{@subject.name}...", class: "text-area" %>
         <div class="btn-ai">
-          <%= f.submit "Ask", class:"btn btn-dark btn btn-lg mt-3" %>
+          <%= f.submit "Ask ✨", class:"btn btn-dark btn btn-lg mt-3" %>
         </div>
       <% end %>
     <% unless @response.nil? %>
@@ -36,6 +36,7 @@
           <%= link_to "Start", quiz_question_path(quiz, quiz.questions.first), class: "btn btn-flat" %>
         </div>
       </div>
+
       <% end %>
     </div>
   </div>
