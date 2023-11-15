@@ -15,6 +15,12 @@
   cursor: pointer;
 }
 
+.question-count {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
 
 
 // .radio-input:checked + .answer-content {
@@ -50,26 +56,30 @@
 //   display: inline-block;
 //   margin-left: 10px;
 // }
-.progress-bar {
-  width: 100%;
-  background-color: #F0F0F0;
-  height: 20px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
 .progress {
-  width: 0;
-  height: 100%;
-  background-color: #007BFF;
-  border-radius: 4px;
-  transition: width 0.3s;
-}
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    overflow: hidden;
+    height: 35px;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #5300A6;
+    transition: width 0.3s ease-in-out;
+  }
+
 .progress-text {
-  display: inline-block;
+  // display: inline-block;
   margin-left: 10px;
 }
 .question-progress-text {
-  display: inline-block;
+  // display: inline-block;
   margin-left: 10px;
 }
 
