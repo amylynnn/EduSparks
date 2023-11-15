@@ -8,16 +8,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-  <div class="row justify-content-center">
-    <%= form_with url: subjects_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+
 
 
 
@@ -30,9 +21,16 @@
           <li class="nav-item">
             <%= link_to "Subjects", subjects_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Quizzes", "#", class: "nav-link" %>
-          </li>
+<div class="row justify-content-center">
+    <%= form_with url: subjects_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-flat" %>
+    <% end %>
+  </div>
           <li class="nav-item dropdown mt-2">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa-solid fa-circle-user fa-2xl" style="color: #ffffff;"></i>
