@@ -65,7 +65,7 @@ h1 {
     width: 370px;
     height: 150px;
     margin: 20px;
-    // background: rgb(83,0,166);
+    // background: rgb(134, 71, 197);
     // background: linear-gradient(180deg, rgba(83,0,166,1) 20%, rgba(93,169,233,1) 100%);
     background: linear-gradient(150deg, rgba(93,169,233,1),  rgba(83,0,166,1) 100%);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -76,12 +76,30 @@ h1 {
     color: #FFFFFF;
     font-size: 40px;
     font-weight: bold;
-    transition: transform 0.3s ease-in-out;
 }
 
-.card-subject-infos:hover {
-    transform: translateY(-5px);
+.transition-background {
+  transition-property: background;
+  transition-duration: 0.9s;
+  // transition-timing-function: linear;
+  // transition-delay: 1s;
+
+  /* Hack Safari */
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 0.9s;
+  // -webkit-transition-timing-function: linear;
+  // -webkit-transition-delay: 1s;
 }
+
+.transition-background:hover {
+  // background: linear-gradient(150deg, #CE9FFC, #7367F0); /* Couleur de fond au survol */
+  background: #6213ad
+}
+
+// .card-subject-infos:hover {
+//   background: linear-gradient(150deg, #CE9FFC, #7367F0); /* Couleur de fond au survol */
+//   // color: black !important; /* Couleur du texte au survol */
+// }
 
 
 .card-subjects-container {

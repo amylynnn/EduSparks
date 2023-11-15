@@ -6,7 +6,7 @@
 
 
     <div class="card-quiz">
-  <%= form_tag(submit_quiz_path(@quiz), method: :post, id: "quiz-form") do %>
+
     <div class="progress-bar">
       <div class="progress" id="progress-bar"></div>
       <span class="progress-text" id="progress-text">0%</span>
@@ -31,7 +31,8 @@
       </fieldset>
     <% end %>
     <div class="card-link py-3">
-       <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
+
+      <% current_question_index = @questions.index { |question| question.id == params[:question_id].to_i } %>
           <% if current_question_index.present? && current_question_index > 0 %>
             <%= link_to "Previous", quiz_question_path(@quiz, @questions[current_question_index - 1]), class: "btn btn-outline-primary" %>
           <% end %>
@@ -40,7 +41,6 @@
             <%= link_to "Next", quiz_question_path(@quiz, @questions[current_question_index + 1]), class: "btn btn-outline-primary" %>
           <% end %>
     </div>
-  <% end %>
 </div>
 </div>
 </div>
