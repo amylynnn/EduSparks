@@ -208,6 +208,134 @@ subjects = [
             ]
           }
         ]
+      },
+      {
+        name: 'Grammar',
+        questions: [
+          {
+            content: "1. Define: une fois",
+            answers: [
+              { content: "A. Once", correct: false },
+              { content: "B. One time", correct: true },
+              { content: "C. This time", correct: false },
+              { content: "D. Once upon a time", correct: false }
+            ]
+          },
+          {
+            content: "2. How do you say 'fortunately' in French ?",
+            answers: [
+              { content: "A. Heureusement", correct: false },
+              { content: "B. Malheureusement", correct: true },
+              { content: "C. Quelquefois", correct: false },
+              { content: "D. A plus", correct: false }
+            ]
+          },
+          {
+            content: "3. Choose the correct verb forms: quand tu ____petit, tu ____ jouer aux dames ou jouer aux billes ?",
+            answers: [
+              { content: "A. As été, as préféré", correct: false },
+              { content: "B. Etait, préférait", correct: false },
+              { content: "C. Etais, préférais", correct: true },
+              { content: "D. Etais, as préféré", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Spelling',
+        questions: [
+          {
+            content: "1. How do you spell the Word pool in french ?",
+            answers: [
+              { content: "A. Picin", correct: false },
+              { content: "B. Piscine", correct: true },
+              { content: "C. Pescine", correct: false },
+              { content: "D. Pissine", correct: false }
+            ]
+          },
+          {
+            content: "2. How do you spell the snail in french ?",
+            answers: [
+              { content: "A. Eskargo", correct: false },
+              { content: "B. Escargot", correct: true },
+              { content: "C. Escrgot", correct: false },
+              { content: "D. Escagot", correct: false }
+            ]
+          },
+          {
+            content: "3. How do you spell the Word book in french ?",
+            answers: [
+              { content: "A. Live", correct: false },
+              { content: "B. Levre", correct: false },
+              { content: "C. Livre", correct: true },
+              { content: "D. Liver", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Conjugation',
+        questions: [
+          {
+            content: "1. Je ___que le temps est beau aujourd'hui",
+            answers: [
+              { content: "A. Pensent", correct: false },
+              { content: "B. Penser", correct: false},
+              { content: "C. Piense", correct: false },
+              { content: "D. Pense", correct: true }
+            ]
+          },
+          {
+            content: "2. Il ___un chien marron",
+            answers: [
+              { content: "A. Choisis", correct: false },
+              { content: "B. Choisit", correct: true },
+              { content: "C. Choisi", correct: false },
+              { content: "D. Choisissons", correct: false }
+            ]
+          },
+          {
+            content: "3. Tu ____ton stylo",
+            answers: [
+              { content: "A. Perds", correct: true },
+              { content: "B. Perd", correct: false },
+              { content: "C. Pierde", correct: false },
+              { content: "D. Perdez", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Literature',
+        questions: [
+          {
+            content: "1. Where was Nobel Prize winner George Bernard Shaw born ?",
+            answers: [
+              { content: "A. Dublin, Ireland", correct: true },
+              { content: "B. New York, New York", correct: false },
+              { content: "C. Paris, France", correct: false },
+              { content: "D. London, England", correct: false }
+            ]
+          },
+          {
+            content: "2. Winner of the Nobel Prize in Literature Albert Camus is best-know for what existential novel ?",
+            answers: [
+              { content: "A. The stranger", correct: true },
+              { content: "B. Crime and Punishment", correct: false },
+              { content: "C. Being and Nothingness", correct: false },
+              { content: "D. Humanism and Terror", correct: false }
+            ]
+          },
+          {
+            content: "3. What type of literature is 2005 Nobel Prize winner Harold Pinter best know for ?",
+            answers: [
+              { content: "A. Plays", correct: true },
+              { content: "B. Allegory", correct: false },
+              { content: "C. Poetry", correct: false },
+              { content: "D. Short Stories", correct: false }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -243,6 +371,134 @@ subjects = [
               { content: "B. Have lived", correct: true },
               { content: "C. Are lived", correct: false },
               { content: "D. Lives", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Vocabulary',
+        questions: [
+          {
+            content: "1. Decline (verb)",
+            answers: [
+              { content: "A. To say no to something, usually politely", correct: true },
+              { content: "B. To show or suggest indirectly", correct: false },
+              { content: "C. To admire someone", correct: false },
+              { content: "D. Not to do something", correct: false }
+            ]
+          },
+          {
+            content: "2. Mutual (adjective)",
+            answers: [
+              { content: "A. Admirable", correct: false },
+              { content: "B. Possible", correct: false },
+              { content: "C. Common, shared by two or more people toward one another", correct: true },
+              { content: "D. Proper, suitable", correct: false }
+            ]
+          },
+          {
+            content: "3. Respect (noun)",
+            answers: [
+              { content: "A. Admiration", correct: true },
+              { content: "B. Retiree", correct: false },
+              { content: "C. Expectation", correct: false },
+              { content: "D. Representation", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Spelling',
+        questions: [
+          {
+            content: "1. Choose the correct spelling of the word that means to cease to be seen; vanish from sight",
+            answers: [
+              { content: "A. Disappear", correct: true },
+              { content: "B. Dissapear", correct: false },
+              { content: "C. Disapier", correct: false },
+              { content: "D. Disapper", correct: false }
+            ]
+          },
+          {
+            content: "2. Choose the spelling of the word that means to offer an excuse for some fault, insult, failure, or injury",
+            answers: [
+              { content: "A. Apologise", correct: false },
+              { content: "B. Apoligize", correct: false },
+              { content: "C. Apologize", correct: true },
+              { content: "D. Apilogise", correct: false }
+            ]
+          },
+          {
+            content: "3. Choose the correct spelling of the word that describes an act or circumstance of entering upon an action or state",
+            answers: [
+              { content: "A. Beggining", correct: false },
+              { content: "B. Beginning", correct: true },
+              { content: "C. Begining", correct: false },
+              { content: "D. Beginin", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Conjugation',
+        questions: [
+          {
+            content: "1. My brother____classical music, he prefers rock",
+            answers: [
+              { content: "A. Likes", correct: false },
+              { content: "B. Like", correct: false },
+              { content: "C. Doesn't like", correct: true },
+              { content: "D. Liked", correct: false }
+            ]
+          },
+          {
+            content: "2. I usually ____to the movies on saturdays",
+            answers: [
+              { content: "A. Go", correct: true },
+              { content: "B. Goes", correct: false },
+              { content: "C. Going", correct: false },
+              { content: "D. Went", correct: false }
+            ]
+          },
+          {
+            content: "3. He ________a cup of coffee now",
+            answers: [
+              { content: "A. Drinks", correct: false },
+              { content: "B. Is drinking", correct: true },
+              { content: "C. Drink", correct: false },
+              { content: "D. Doesn't drink", correct: false }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Literature',
+        questions: [
+          {
+            content: "1. One of the following is not a type of drama",
+            answers: [
+              { content: "A. Burlesque", correct: false },
+              { content: "B. Resolution", correct: true },
+              { content: "C. Tragedy", correct: false },
+              { content: "D. Pantomime", correct: false }
+            ]
+          },
+          {
+            content: "2. The analysis of the metrical pattern of a poem is",
+            answers: [
+              { content: "A. Prosody", correct: false },
+              { content: "B. Appreciation", correct: false },
+              { content: "C. Scancion", correct: true },
+              { content: "D. Style", correct: false }
+            ]
+          },
+          {
+            content: "3. One of the following is correct",
+            answers: [
+              { content: "A. Dramatization occurs only in plays", correct: false },
+              { content: "B. Only prose and drama use dramatization", correct: true },
+              { content: "C. Dramatization is used in poetry", correct: false },
+              { content: "D. Dramatization is found only in prose", correct: false }
             ]
           }
         ]
