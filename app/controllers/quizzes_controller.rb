@@ -7,6 +7,7 @@ class QuizzesController < ApplicationController
       @quizzess = @quizzes.where("name ILIKE ?", "%#{params[:query]}%")
     end
   end
+
   def show
     # @quiz = Quiz.find(params[:id])
     @quiz = Quiz.find_by(id: params[:id])
