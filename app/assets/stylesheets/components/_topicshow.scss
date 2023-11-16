@@ -17,6 +17,26 @@
     transform: translateY(-5px);
 }
 
+.card-ai {
+  background-image: url('gradient.jpg');
+  background-size: cover;
+  padding: 30px 25px;
+  max-width: 42rem;
+  border-radius: 15px;
+  margin: 2rem;
+
+  .btn-ai-container {
+    text-align: center;
+
+    .btn-ai {
+      padding: 15px 30px;
+      background-color: white;
+      color: #000000;
+      font-weight: 500;
+      font-size: 1.125rem;
+    }
+  }
+}
 
 .card {
   border-radius: 10px;
@@ -53,6 +73,13 @@
 .text-area {
   border: none;
   border-radius: 4px;
+}
+
+.icon-link {
+  text-decoration: none;  
+  color: #333;
+  display: inline-flex;
+  align-items: center;
 }
 
 // .btn-ai {

@@ -3,13 +3,24 @@
   <div class="container">
     <h1><strong>EduSparks </strong></h1>
     <p>Unleash Your Knowledge Potential! Engage, Learn, and Excel with Interactive Quizzes for Enhanced Learning.</p>
-    <%= link_to "About us", about_path, class: "btn btn-flat" %>
+    <%= link_to "About us", about_path, class: "btn btn-banner" %>
   </div>
 </div>
 
 <div class="container">
- <section id="subjects">
+  <section id="subjects"></section>
   <h1 class="mb-3">SUBJECTS</h1>
+<div class="row" style="justify-content-center">
+  <%= form_with url: subjects_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          style: "width: 300px;",
+          placeholder: "Type a subject"
+      %>
+    <%= submit_tag "Search", name: "", class: "btn btn-flat" %>
+  <% end %>
+</div>
   <br>
   <div class="card-subjects-container">
     <% @subjects.each do |subject| %>
@@ -20,11 +31,40 @@
       <% end %>
     <% end %>
   </div>
- </section>
 </div>
 
-<div class="container">
-  <h1 class="mb-3">My Topics</h1>
-  <div class="card-topics">
+<section class="adv-section">
+  <div class="container">
+    <div class="adv-container">
+      <div class="adv-container-left">
+        <h3>Know more about the benefits of quizzes</h3>
+        <p>Our cool site with quizzes, OpenAI magic, and chill lectures for a fun and personalized learning vibe. </p>
+      </div>
+      <div class="adv-cards-container">
+          <div class="adv-card">
+            <h3><strong>Get Ready for the Big Show</strong></h3>
+            <p>Quizzes prep you for the big exam gig, fine-tuning your skills to rock the main event. 🎸</p>
+          </div>
+          <div class="adv-card">
+            <h3><strong> Personalized learning. </strong></h3>
+            <p>Choose-your-own-adventure for learning, tailored to your style. 📚✨</p>
+          </div>
+          <div class="adv-card">
+            <h3><strong> Staying on Your A-Game </strong></h3>
+            <p>Quizzes add learning responsibility, keeping you on your toes and ensuring effort. 👣🧠</p>
+          </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+
+<section class="cta-sign-up">
+  <div class="container">
+    <div class="cta-container">
+      <h1><strong>Ready, Set, Quiz! Sign in for Brain Teasers and Good Vibes!</strong></h1>
+      <p> Sign in, challenge your brain, and join the fun. Your personalized quiz experience is just a click away! 🚀🧠</p>
+      <%= link_to "Sign up",new_user_session_path, class: "btn btn-signin" %>
+    </div>
+  </div>
+</section>

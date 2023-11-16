@@ -1,14 +1,9 @@
 class QuizzesController < ApplicationController
   before_action :authenticate_user!, only: %i[submit results]
 
-
   def index
     @quizzess = Quiz.all
-    if params[:query].present?
-      @quizzess = @quizzes.where("name ILIKE ?", "%#{params[:query]}%")
-    end
   end
-
 
   def show
     # @quiz = Quiz.find(params[:id])

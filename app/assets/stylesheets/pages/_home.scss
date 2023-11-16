@@ -1,4 +1,15 @@
 // Specific CSS for your home-page
+p {
+  font-family: 'Barlow', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: white;
+}
 .container-fluid {
   .nav-link {
     color:#FFFFFF;
@@ -78,28 +89,6 @@ h1 {
     font-weight: bold;
 }
 
-.transition-background {
-  transition-property: background;
-  transition-duration: 0.9s;
-  // transition-timing-function: linear;
-  // transition-delay: 1s;
-
-  /* Hack Safari */
-  -webkit-transition-property: background;
-  -webkit-transition-duration: 0.9s;
-  // -webkit-transition-timing-function: linear;
-  // -webkit-transition-delay: 1s;
-}
-
-.transition-background:hover {
-  // background: linear-gradient(150deg, #CE9FFC, #7367F0); /* Couleur de fond au survol */
-  background: #6213ad
-}
-
-// .card-subject-infos:hover {
-//   background: linear-gradient(150deg, #CE9FFC, #7367F0); /* Couleur de fond au survol */
-//   // color: black !important; /* Couleur du texte au survol */
-// }
 
 
 .card-subjects-container {
@@ -130,4 +119,87 @@ h1 {
   background-color: white;
   text-align: center;
   margin-right: 2%;
+}
+
+.adv-section {
+  background-color: #EBD6FF;
+  padding: 50px 0;
+  background-image: url('NEW36238.png');
+}
+
+.adv-container {
+  display: flex;
+  gap: 25px;
+
+  .adv-container-left {
+    min-width: 40%;
+
+    h3 {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+  }
+}
+
+.adv-cards-container {
+  display: flex;
+  justify-content: space-between;
+
+  .adv-card {
+    width: 32%;
+    height: 340px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 30px;
+    transition: transform 0.3s ease-in-out;
+    background-color: #FFFFFF;
+
+    p {
+      // margin-top: 30px;
+      padding: 8px;
+    }
+  }
+
+}
+
+.adv-card:hover {
+  transform: translateY(-10px);
+}
+
+.cta-container {
+  background-color: #5300A6;
+  color: white;
+  padding: 50px 45px;
+  border-radius: 11px;
+
+  h1 {
+    color: white;
+  }
+}
+
+.btn-signin {
+  background-color: white;
+  color:#5300A6;
+  padding: 15px 30px;
+  font-size: 16px;
+}
+
+.btn-search {
+  color: #5300A6;
+  border-radius: 4px;
+  background: white;
+  font-family: 'inter', sans-serif;
+  font-weight: semi-bold;
+}
+
+.btn-banner {
+  color: white;
+  border-radius: 4px;
+  background: #5300A6;
+  font-family: 'inter', sans-serif;
+  font-weight: semi-bold;
+  padding: 15px 30px;
+  font-size: 16px;
 }

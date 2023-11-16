@@ -1,44 +1,64 @@
 
 <div class="container-topic">
-  <div class="main-container p-4" >
-    <h1 class="mb-3">Topics</h1>
-    <h2><%= @subject.name %></h2>
-  </div>
+<div class="container">
+    <div class="main-container p-4" >
+      <h1> Topics </h1>
 
-<div class="card4 mx-auto" style="width: 40rem;">
-  <div>
-      <%= form_with url: subject_path(@subject), method: :get do |f| %>
-        <%= f.text_area :query, rows: 4, cols: 70, placeholder: " Ask me anything about #{@subject.name}...", class: "text-area" %>
-        <div class="btn-ai">
-          <%= f.submit "Ask ✨", class:"btn btn-dark btn btn-lg mt-3" %>
-        </div>
-      <% end %>
-    <% unless @response.nil? %>
-      <div class="mt-3 card card-body">
-        <p><%= @response['choices'][0]['message']['content'] %></p>
+
+      <div class='d-flex justify-content-between'>
+      <h2> <%= link_to subjects_path, class: 'icon-link' do %>
+  <i class="fa-solid fa-arrow-left fa-sm"></i>
+<% end %> <%= @subject.name %> </h2>
+      <div class="row" style="justify-content-center">
+        <%= form_with url: subject_path(@subject), method: :get, class: "d-flex" do %>
+          <%= text_field_tag :search,
+                params[:search],
+                class: "form-control",
+                style: "width: 300px;",
+                placeholder: "Type a topic"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-flat" %>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-<br>
-
-  <div class="card mx-auto bg-light m-3" style="width: 70rem;">
-    <div class="form-group">
-    <% @quizzes.each do |quiz| %>
-
-      <div class="card2-subject-infos d-flex justify-content-between p-4">
-        <ul>
-          <li>
-            <h2 class="fw-bold"><%= quiz.name %></h2>
-          </li>
-        </ul>
-        <div class="d-flex mx-2">
-          <%= link_to "Start", quiz_question_path(quiz, quiz.questions.first), class: "btn btn-flat" %>
-        </div>
       </div>
-
-      <% end %>
     </div>
-  </div>
+
+    <div class="card-ai mx-auto">
+      <div>
+            <%= form_with url: subject_path(@subject), method: :get do |f| %>
+              <%= f.text_area :query, rows: 4, cols: 70, placeholder: " Ask me anything about #{@subject.name}...", class: "text-area" %>
+            <% unless @response.nil? %>
+              <div class="mt-3 card card-body">
+                <p><%= @response['choices'][0]['message']['content'] %></p>
+              </div>
+            <% end %>
+              <div class="btn-ai-container">
+                <%= f.submit "Ask me something ✨", class:"btn btn-ai mt-3" %>
+              </div>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="card mx-auto bg-light m-3" style="width: 70rem;">
+      <div class="form-group">
+      <% @quizzes.each do |quiz| %>
+
+        <div class="card2-subject-infos d-flex justify-content-between p-4">
+          <ul>
+            <li>
+              <h2 class="fw-bold"><%= quiz.name %></h2>
+            </li>
+          </ul>
+          <div class="d-flex mx-2">
+            <%= link_to "Start", quiz_question_path(quiz, quiz.questions.first), class: "btn btn-flat" %>
+          </div>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+
+
+</div>
 </div>
 <br>

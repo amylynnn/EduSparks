@@ -17,7 +17,11 @@ class SubjectsController < ApplicationController
       # si Sujet non trouvé, rediriger vers une autre action
       redirect_to subjects_path
     else
-      @quizzes = @subject.quizzes
+      if params[:search].present?
+        @quizzes = Quiz.where("name ILIKE ?", "%#{params[:search]}%")
+      else
+        @quizzes = @subject.quizzes
+      end
       # @response = chatgpt_call(params[:query]) unless params[:query].nil?
     end
   end
