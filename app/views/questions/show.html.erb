@@ -1,6 +1,11 @@
 <div class="container-quiz py-5">
   <div class="main-card mx-auto bg-light" style="width: 70rem;">
     <h2 class="mb-3">Quiz</h2>
+
+    <h1 class="fw-bold mb-5"><%= link_to subjects_path, class: 'icon-link' do %>
+  <i class="fa-solid fa-arrow-left fa-sm"></i>
+<% end %>  <%= @quiz.name %></h1>
+
     <div class="video-btn-container">
       <h1 class="fw-bold mb-5"><%= @quiz.name %></h1>
       <% if @quiz.video_url.present? %>
@@ -9,6 +14,7 @@
       </div>
       <% end %>
     </div>
+
 
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
