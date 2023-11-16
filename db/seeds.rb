@@ -12,6 +12,7 @@ subjects = [
     quizzes: [
       {
         name: 'Algebra',
+        video_url: 'https://www.youtube.com/embed/NybHckSEQBI?si=ko6XXQC24uEoPHXD',
         questions: [
           {
             content: "1. What's 9 + 10 ?",
@@ -23,27 +24,91 @@ subjects = [
             ]
           },
           {
-            content: "2. Le produit est le résultat :",
+            content: "2. The product is the result:",
             answers: [
-              { content: "A. D'une addition", correct: false },
-              { content: "B. D'une soustraction", correct: false },
-              { content: "C. D'une division", correct: false },
-              { content: "D. D'une multiplication", correct: true }
+              { content: "A. Of an addition", correct: false },
+              { content: "B. Of a subtraction", correct: false },
+              { content: "C. Of a division", correct: false },
+              { content: "D. Of a multiplication", correct: true }
             ]
           },
           {
-            content: "3. Quel est le carré du quart du tiers de 12 ?",
+            content: "3. What is the square of the quarter of the third of 12 ?",
             answers: [
-              { content: "A. Neuf", correct: false },
-              { content: "B. Un", correct: true },
-              { content: "C. Trois", correct: false },
-              { content: "D. Deux", correct: false }
+              { content: "A. Nine", correct: false },
+              { content: "B. One", correct: true },
+              { content: "C. Three", correct: false },
+              { content: "D. Two", correct: false }
+            ]
+          },
+          {
+            content: "4. If 1+2+….+k=55, then the value of k is",
+            answers: [
+              { content: "A. 10", correct: true },
+              { content: "B. 11", correct: false },
+              { content: "C. 12", correct: false },
+              { content: "D. 13", correct: false }
+            ]
+          },
+          {
+            content: "5. The 10th term of the sequence whose nth term is (3n-2) is :",
+            answers: [
+              { content: "A. 28", correct: true },
+              { content: "B. 42", correct: false },
+              { content: "C. 35", correct: false },
+              { content: "D. 32", correct: false }
+            ]
+          },
+          {
+            content: "6. If cot A = 12/5, then the value of (sin A + cos A) x cosec A is :",
+            answers: [
+              { content: "A. 13/5", correct: false },
+              { content: "B. 17/5", correct: true },
+              { content: "C. 14/5", correct: false },
+              { content: "D. 1", correct: false }
+            ]
+          },
+          {
+            content: "7. Solve for x :   2x + y = 8,    y= - 6",
+            answers: [
+              { content: "A. 6", correct: false },
+              { content: "B. 4", correct: false },
+              { content: "C. 7", correct: true },
+              { content: "D. 16", correct: false }
+            ]
+          },
+          {
+            content: "8. The sum of exponents of prime factors of number 72072 is divisible by __",
+            answers: [
+              { content: "A. 3", correct: false },
+              { content: "B. 4", correct: true },
+              { content: "C. 5", correct: false },
+              { content: "D. 6", correct: false }
+            ]
+          },
+          {
+            content: "9. The remainder when 5 - 4x +1 is divided by x- 3 is :",
+            answers: [
+              { content: "A. 43", correct: false },
+              { content: "B. 34", correct: true },
+              { content: "C. 44", correct: false },
+              { content: "D. 33", correct: false }
+            ]
+          },
+          {
+            content: "10. The rots of the equation +x -182=0 are :",
+            answers: [
+              { content: "A. 14 and 13", correct: false },
+              { content: "B. -14 and 13", correct: true },
+              { content: "C. 12 and 15", correct: false },
+              { content: "D. -12 and 15", correct: false }
             ]
           }
         ]
       },
       {
         name: 'Statistics',
+        video_url: "https://www.youtube.com/embed/XZo4xyJXCak?si=NpDJMOYr14_3rDYd",
         questions: [
           {
             content: "1. Age is classified as",
@@ -66,16 +131,80 @@ subjects = [
           {
             content: "3. How many modes are there in this set of data: 2, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 7, 8, 8 ?",
             answers: [
-              { content: 'A. one', correct: false },
-              { content: 'B. two', correct: true },
-              { content: 'C. none', correct: false },
-              { content: 'D. seven', correct: false }
+              { content: 'A. One', correct: false },
+              { content: 'B. Two', correct: true },
+              { content: 'C. None', correct: false },
+              { content: 'D. Seven', correct: false }
+            ]
+          },
+          {
+            content: "4. The qualities of discrete data can be :",
+            answers: [
+              { content: 'A. Measured', correct: false },
+              { content: 'B. Counted', correct: true },
+              { content: 'C. Both', correct: false },
+              { content: 'D. None', correct: false }
+            ]
+          },
+          {
+            content: "5. The qualities of continuous data can be :",
+            answers: [
+              { content: 'A. Measured', correct: true },
+              { content: 'B. Counted', correct: false },
+              { content: 'C. Both', correct: false },
+              { content: 'D. None', correct: false }
+            ]
+          },
+          {
+            content: "6. Daily rainfall is an example of what sort of data :",
+            answers: [
+              { content: 'A. Discrete', correct: false },
+              { content: 'B. Continuous', correct: true },
+              { content: 'C. Both', correct: false },
+              { content: 'D. None', correct: false }
+            ]
+          },
+          {
+            content: "7. The distance that a cyclist rides each day is what sort of data :",
+            answers: [
+              { content: 'A. Discrete', correct: false },
+              { content: 'B. Continuous', correct: true },
+              { content: 'C. Both', correct: false },
+              { content: 'D. None', correct: false }
+            ]
+          },
+          {
+            content: "8. The frequency of a cyclist riding over a few kms weekly is this sort of data",
+            answers: [
+              { content: 'A. Discrete', correct: true },
+              { content: 'B. Continuous', correct: false },
+              { content: 'C. Both', correct: false },
+              { content: 'D. None', correct: false }
+            ]
+          },
+          {
+            content: "9. Which of the following is a discrete variable ?",
+            answers: [
+              { content: 'A. The height of individuals in a classroom', correct: false },
+              { content: 'B. The number of students in a classroom', correct: true },
+              { content: 'C. The temperature in degrees Celsius', correct: false },
+              { content: 'D. The time it takes for a car to travel one mile', correct: false }
+            ]
+          },
+          {
+            content: "10. What is the recent population of the Philippines last 2007 ?",
+            answers: [
+              { content: 'A. 88.57M', correct: true },
+              { content: 'B. 67.34M', correct: false },
+              { content: 'C. 99.89M', correct: false },
+              { content: 'D. 80.00M', correct: false }
             ]
           }
         ]
       },
       {
         name: 'Calculus',
+        video_url: "https://www.youtube.com/embed/WsQQvHm4lSw?si=M-W6e6YPrBZheswY",
         questions: [
           {
             content: "1. What is the integral of 1 with respect to x ?",
@@ -108,6 +237,7 @@ subjects = [
       },
       {
         name: 'Probability',
+        video_url: "https://www.youtube.com/embed/SkidyDQuupA?si=okhOmMAwmoiZQ8kU",
         questions: [
           {
             content: "1. If you rolled a 6-sided dice, What's the probability of rolling a 3 ?",
@@ -140,6 +270,7 @@ subjects = [
       },
       {
         name: 'Fraction',
+        video_url: "https://www.youtube.com/embed/pmTxwVQdJNU?si=0KcTY95KyYbmauyL",
         questions: [
           {
             content: "1. Simplified 15/40",
@@ -179,6 +310,7 @@ subjects = [
     quizzes: [
       {
         name: 'Vocabulary',
+        video_url: "https://www.youtube.com/embed/XR-F2ggDODY?si=nZyo58WccjJR-98v",
         questions: [
           {
             content: "1. Choose the correct plural form of: le cheval",
@@ -206,11 +338,75 @@ subjects = [
               { content: "C. When", correct: false },
               { content: "D. Where", correct: false }
             ]
+          },
+          {
+            content: "4. Choose the correct meaning of the following word: Laid",
+            answers: [
+              { content: "A. Ugly", correct: true },
+              { content: "B. Mean", correct: false },
+              { content: "C. Pretty", correct: false },
+              { content: "D. Funny", correct: false }
+            ]
+          },
+          {
+            content: "5. Choose the correct meaning of the following word: Amusant",
+            answers: [
+              { content: "A. English", correct: false },
+              { content: "B. Amazing", correct: false },
+              { content: "C. Funny", correct: true },
+              { content: "D. Silly", correct: false }
+            ]
+          },
+          {
+            content: "6. On y va is _________",
+            answers: [
+              { content: "A. Come back", correct: true },
+              { content: "B. Let's go", correct: false },
+              { content: "C. Let's listen", correct: false },
+              { content: "D. Come home", correct: false }
+            ]
+          },
+          {
+            content: "7. The word 'repeat' is spelled as _________ in French",
+            answers: [
+              { content: "A. Repeater", correct: false },
+              { content: "B. Repetez", correct: true },
+              { content: "C. Repouser", correct: false },
+              { content: "D. Retander", correct: false }
+            ]
+          },
+          {
+            content: "8. How well do you know French movie vocabulary : une étoile",
+            answers: [
+              { content: "A. A trailer", correct: false },
+              { content: "B. Glitter", correct: false },
+              { content: "C. Un réalisateur", correct: false },
+              { content: "D. A star", correct: true }
+            ]
+          },
+          {
+            content: "9. Plural form of Goose ",
+            answers: [
+              { content: "A. Ghee", correct: false },
+              { content: "B. Fishes", correct: false },
+              { content: "C. Geese", correct: true },
+              { content: "D. Guns", correct: false }
+            ]
+          },
+          {
+            content: "10. Collective noun of player is",
+            answers: [
+              { content: "A. A team", correct: true },
+              { content: "B. A band", correct: false },
+              { content: "C. An army", correct: false },
+              { content: "D. A pack", correct: false }
+            ]
           }
         ]
       },
       {
         name: 'Grammar',
+        video_url: "https://www.youtube.com/embed/9q7nx6kzvD0?si=Cf5uWEW6cHUuC6SW",
         questions: [
           {
             content: "1. Define: une fois",
@@ -238,11 +434,75 @@ subjects = [
               { content: "C. Etais, préférais", correct: true },
               { content: "D. Etais, as préféré", correct: false }
             ]
+          },
+          {
+            content: "4. Translate 'boat' into french",
+            answers: [
+              { content: "A. Bateau", correct: true },
+              { content: "B. Baton", correct: false },
+              { content: "C. Bar", correct: false },
+              { content: "D. Blaireau", correct: false }
+            ]
+          },
+          {
+            content: "5. What does voiture mean in English ?",
+            answers: [
+              { content: "A. Mansion", correct: false },
+              { content: "B. Tools", correct: false },
+              { content: "C. Car", correct: true },
+              { content: "D. House", correct: false }
+            ]
+          },
+          {
+            content: "6. Bisou means ?",
+            answers: [
+              { content: "A. Drop", correct: false },
+              { content: "B. Kiss", correct: true },
+              { content: "C. Flight", correct: false },
+              { content: "D. Anger", correct: false }
+            ]
+          },
+          {
+            content: "7. Citrouille",
+            answers: [
+              { content: "A. Orange", correct: false },
+              { content: "B. Pumpkin", correct: true },
+              { content: "C. Washcloth", correct: false },
+              { content: "D. Dryer", correct: false }
+            ]
+          },
+          {
+            content: "8. Translate 'olive' into french",
+            answers: [
+              { content: "A. Oliver", correct: false },
+              { content: "B. Olive", correct: true },
+              { content: "C. Olivier", correct: false },
+              { content: "D. Olivet", correct: false }
+            ]
+          },
+          {
+            content: "9. Choose the correct translation of 'une forêt'",
+            answers: [
+              { content: "A. A forest", correct: true },
+              { content: "B. A park", correct: false },
+              { content: "C. A three", correct: false },
+              { content: "D. A tree", correct: false }
+            ]
+          },
+          {
+            content: "10. Biology",
+            answers: [
+              { content: "A. Le biology", correct: false },
+              { content: "B. La bilogy", correct: false },
+              { content: "C. La Biologie", correct: true },
+              { content: "D. Le biologie", correct: false }
+            ]
           }
         ]
       },
       {
         name: 'Spelling',
+        video_url: "https://www.youtube.com/embed/OKHN7O2kwJQ?si=tvjN82d_f5YEElJV",
         questions: [
           {
             content: "1. How do you spell the Word pool in french ?",
@@ -275,6 +535,7 @@ subjects = [
       },
       {
         name: 'Conjugation',
+        video_url: "https://www.youtube.com/embed/TuyciMzXdbI?si=X1JVmQGlTWCw8BaQ",
         questions: [
           {
             content: "1. Je ___que le temps est beau aujourd'hui",
@@ -307,6 +568,7 @@ subjects = [
       },
       {
         name: 'Literature',
+        video_url: "https://www.youtube.com/embed/qTXtVhq3pxs?si=0sr48vfhoSvFkxLj",
         questions: [
           {
             content: "1. Where was Nobel Prize winner George Bernard Shaw born ?",
@@ -345,6 +607,7 @@ subjects = [
     quizzes: [
       {
         name: 'Grammar',
+        video_url: "https://www.youtube.com/embed/8IogxPUrW7k?si=9dAlZ7-k3pnSv-pf",
         questions: [
           {
             content: "1. Choose the best synonym for cling",
@@ -372,11 +635,75 @@ subjects = [
               { content: "C. Are lived", correct: false },
               { content: "D. Lives", correct: false }
             ]
+          },
+          {
+            content: "4. Choose the correct answer- The house was locked, so __________ could get in",
+            answers: [
+              { content: "A. Everybody", correct: false },
+              { content: "B. Anybody", correct: false },
+              { content: "C. Somebody", correct: false },
+              { content: "D. Nobody", correct: true }
+            ]
+          },
+          {
+            content: "5. Some people have difficulty in making __________ understood",
+            answers: [
+              { content: "A. Themselves", correct: true },
+              { content: "B. Them", correct: false },
+              { content: "C. One", correct: false },
+              { content: "D. Oneself", correct: false }
+            ]
+          },
+          {
+            content: "6. You look __________ a ghost",
+            answers: [
+              { content: "A. Lived", correct: false },
+              { content: "B. Have lived", correct: false },
+              { content: "C. As though to see", correct: false },
+              { content: "D. As if you had seen", correct: true }
+            ]
+          },
+          {
+            content: "7. Alex: I don't think I'll come with you tomorrow. Jim:  OK, but let me know if you __________",
+            answers: [
+              { content: "A. Move your opinion", correct: false },
+              { content: "B. Change your mind", correct: true },
+              { content: "C. Change idea", correct: false },
+              { content: "D. Alert your mind", correct: false }
+            ]
+          },
+          {
+            content: "8. __________ to see the new offices yet ?",
+            answers: [
+              { content: "A. Have you had a chance", correct: true },
+              { content: "B. Did you get the possibility", correct: false },
+              { content: "C. Have you got the occasion", correct: false },
+              { content: "D. Do you get the opportunity", correct: false }
+            ]
+          },
+          {
+            content: "9. The English __________ when meeting for the first time",
+            answers: [
+              { content: "A. Hold hands", correct: false },
+              { content: "B. Give the hand", correct: false },
+              { content: "C. Offer the hand", correct: false },
+              { content: "D. Shake hands", correct: true }
+            ]
+          },
+          {
+            content: "10. The bus has gone. Can you __________ home ?",
+            answers: [
+              { content: "A. Make me a ride", correct: false },
+              { content: "B. Give me a lift", correct: true },
+              { content: "C. Ride me", correct: false },
+              { content: "D. Pick me up", correct: false }
+            ]
           }
         ]
       },
       {
         name: 'Vocabulary',
+        video_url: "https://www.youtube.com/embed/4m9tDeLEbI4?si=HLONSm7ul4M48dwF",
         questions: [
           {
             content: "1. Decline (verb)",
@@ -404,11 +731,75 @@ subjects = [
               { content: "C. Expectation", correct: false },
               { content: "D. Representation", correct: false }
             ]
+          },
+          {
+            content: "4. Some scientists believe that humans have caused _______ damage to our planet",
+            answers: [
+              { content: "A. Incoherent", correct: false },
+              { content: "B. Illiterate", correct: false },
+              { content: "C. Immutable", correct: false },
+              { content: "D. Irreparable", correct: true }
+            ]
+          },
+          {
+            content: "5. Dancing skills are _____ to the requirements of an accountant's job",
+            answers: [
+              { content: "A. Irreverent", correct: false },
+              { content: "B. Ineligible", correct: false },
+              { content: "C. Irrelevant", correct: true },
+              { content: "D. Immutable", correct: false }
+            ]
+          },
+          {
+            content: "6. Which prefix fits best with 'interpret'?",
+            answers: [
+              { content: "A. Mis-", correct: true },
+              { content: "B. Mal-", correct: false },
+              { content: "C. Male-", correct: false },
+              { content: "D. None of the above", correct: false }
+            ]
+          },
+          {
+            content: "7. Choose the correct spelling :",
+            answers: [
+              { content: "A. Weard", correct: false },
+              { content: "B. Wierd", correct: false },
+              { content: "C. Weird", correct: true },
+              { content: "D. Weerd", correct: false }
+            ]
+          },
+          {
+            content: "8. In the middle ages, armies would _____ entire towns, cutting off their supplies",
+            answers: [
+              { content: "A. Reign", correct: false },
+              { content: "B. Beseige", correct: false },
+              { content: "C. Riegn", correct: false },
+              { content: "D. Besiege", correct: true }
+            ]
+          },
+          {
+            content: "9. Choose the correct spelling :",
+            answers: [
+              { content: "A. Proficeint", correct: false },
+              { content: "B. Profishient", correct: false },
+              { content: "C. Profiecient", correct: false },
+              { content: "D. Proficient", correct: true }
+            ]
+          },
+          {
+            content: "10. Natalia was very ________ tonight. Do you think she's OK ? ",
+            answers: [
+              { content: "A. Extroverted  ", correct: false },
+              { content: "B. Confident", correct: false },
+              { content: "C. Quiet", correct: true },
+              { content: "D. intravert", correct: false }
+            ]
           }
         ]
       },
       {
         name: 'Spelling',
+        video_url: "https://www.youtube.com/embed/eVf10XmUGqQ?si=uG0tHyfiLYjfHQkV",
         questions: [
           {
             content: "1. Choose the correct spelling of the word that means to cease to be seen; vanish from sight",
@@ -441,6 +832,7 @@ subjects = [
       },
       {
         name: 'Conjugation',
+        video_url: "https://www.youtube.com/embed/PQG_gYFePD4?si=qH0GDb54jL_Ie94X",
         questions: [
           {
             content: "1. My brother____classical music, he prefers rock",
@@ -473,6 +865,7 @@ subjects = [
       },
       {
         name: 'Literature',
+        video_url: "https://www.youtube.com/embed/_-0p_x7idB0?si=5RT8hcltAZKZKC9r",
         questions: [
           {
             content: "1. One of the following is not a type of drama",
@@ -511,6 +904,7 @@ subjects = [
     quizzes: [
       {
         name: 'Finance',
+        video_url: "https://www.youtube.com/embed/oKxzoDskVr4?si=VUskSBuMFP2VDdRR",
         questions: [
           {
             content: '1. "Shareholder wealth" in a firm is represented by',
@@ -549,6 +943,7 @@ subjects = [
     quizzes: [
       {
         name: 'AI',
+        video_url: "https://www.youtube.com/embed/MXkoN4rql3g?si=nG5aujzDaXZ4grVr",
         questions: [
           {
             content: "1. If Human's and AI entities learn from experience what does Machine Learning learn from ?",
@@ -587,6 +982,7 @@ subjects = [
     quizzes: [
       {
         name: 'Chemistry',
+        video_url: "https://www.youtube.com/embed/k3rRrl9J2F4?si=ZEyVV26gpgbbCmMr",
         questions: [
           {
             content: "1. You can't live without water! What is its chemical formula ?",
