@@ -1,0 +1,23 @@
+<h1>My Quiz</h1>
+<h3>This where you will see all the quizzes you have achieved.</h3>
+<div class='topic-container'>
+  <div class="grid-my-quizzes">
+    <% @quizzes_by_subject.each do |subject, quizzes| %>
+      <div class="card">
+          <h2><%= subject.name %></h2>
+        <% quizzes.map(&:results).flatten.each do |result| %>
+          <%= link_to quiz_question_path(result.quiz, result.quiz.questions.first), style:"text-decoration:none;" do %>
+            <p><%= result.quiz.name %></p>
+          <% end %>
+
+          <!-- Progress bar code -->
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: <%= get_percentage(result) %>%;" aria-valuenow="<%= get_percentage(result) %>" aria-valuemin="0" aria-valuemax="100">
+              <%= get_percentage(result).to_i %>% <!-- Display the percentage as an integer -->
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
