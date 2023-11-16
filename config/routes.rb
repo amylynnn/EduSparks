@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :questions, only: %i[show]
   end
 
+  get 'users/:user_id/my_quizzes', to: 'quizzes#my_quizzes', as: 'my_quizzes'
+
   resources :results, only: %i[show]
 
   resources :questions, except: %i[index show create new destroy update edit] do

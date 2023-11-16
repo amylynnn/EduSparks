@@ -37,7 +37,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Home", subjects_path, class: "dropdown-item" %>
-              <%= link_to "My Topics", "#", class: "dropdown-item" %>
+              <%= link_to "My Quizzes", my_quizzes_path(current_user), class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
