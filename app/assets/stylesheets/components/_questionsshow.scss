@@ -1,0 +1,45 @@
+.main-card {
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.question-count {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 50px;
+}
+
+.video-btn-container {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-play {
+    border: 2px solid #5300A6;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    color: #5300A6;
+    transition: all 200ms ease-in;
+
+    &:hover {
+      background-color: #5300A6;
+      color: #FFFFFF;
+
+      i {
+        color: #FFFFFF;
+      }
+    }
+
+    i {
+      margin-right: 8px;
+      font-size: 1.4rem;
+      color: #5300A6;
+    }
+  }
+}
+
+.video-modal-content {
+  border-radius: 30px;
+  padding: 20px;
+  align-items: center;
+}

@@ -1,46 +1,61 @@
-<%# showpage %>
 <div class="container-quiz py-5">
-  <div class="main-card p-4 mx-auto bg-light" style="width: 70rem;">
+  <div class="main-card mx-auto bg-light" style="width: 70rem;">
     <h2 class="mb-3">Quiz</h2>
+
     <h1 class="fw-bold mb-5"><%= link_to subjects_path, class: 'icon-link' do %>
   <i class="fa-solid fa-arrow-left fa-sm"></i>
 <% end %>  <%= @quiz.name %></h1>
 
-    <div class="card-quiz">
-        <fieldset>
-          <legend class="fw-bold mb-5"><%= @question.content %></legend>
-          <div class="question-content">
-              <%= simple_form_for [@question, @user_answer] do |f| %>
-                <div class="multiple-choice-box">
-                  <div class="answer-content mb-5">
-                    <%= f.input :answer,
-                                legend_tag: false,
-                                collection_wrapper_tag: 'div',
-                                collection_wrapper_class: 'category-wrapper',
-                                item_wrapper_class: 'category-item',
-                                input_html: {class: 'category-selector'},
-                                as: :radio_buttons,
-                                collection: @question.answers.map(&:content)
-                    %>
-                  </div>
-                  <div class="d-flex justify-content-center m-4 gap-4">
-                    <%= link_to "Previous", (quiz_question_path(@quiz, @question.id - 1) if @questions.index(@question) > 0), class: "btn btn-outline-secondary btn-lg" %>
-                    <%= f.submit "Next", class: "btn btn-outline-primary btn-lg" %>
-                  </div>
-                  <div class="question-count">
-                    <%= @question.content[0] %> / <%= @questions.all.count %> questions answered
-                  </div>
-                </div>
-              <% end %>
+    <div class="video-btn-container">
+      <h1 class="fw-bold mb-5"><%= @quiz.name %></h1>
+      <% if @quiz.video_url.present? %>
+      <div class="card-lecture gap-4">
+      <button type="button" class="btn btn-play" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa-solid fa-circle-play"></i>Lecture</button>
+      </div>
+      <% end %>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <% if @quiz.video_url.present? %>
+          <div class="video-modal-content mx-auto">
+            <iframe width="560" height="315" src="<%= @quiz.video_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-        </fieldset>
+          <% end %>
+        </div>
       </div>
-  </div>
-  <div class= "p-4 mx-auto bg-light" style="width: 70rem;">
-  <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-        <%= @percentage %>% <!-- Display the percentage symbol -->
-      </div>
+    </div>
+    <div class="card-quiz">
+      <fieldset>
+        <legend class="fw-bold mb-5"><%= @question.content %></legend>
+        <div class="question-content">
+            <%= simple_form_for [@question, @user_answer] do |f| %>
+              <div class="multiple-choice-box">
+                <div class="answer-content mb-5">
+                  <%= f.input :answer,
+                              legend_tag: false,
+                              collection_wrapper_tag: 'div',
+                              collection_wrapper_class: 'category-wrapper',
+                              item_wrapper_class: 'category-item',
+                              input_html: {class: 'category-selector'},
+                              as: :radio_buttons,
+                              collection: @question.answers.map(&:content)
+                  %>
+                </div>
+                <div class="d-flex justify-content-center m-4 gap-4">
+                  <%= link_to "Previous", (quiz_question_path(@quiz, @question.id - 1) if @questions.index(@question) > 0), class: "btn btn-outline-secondary btn-lg" %>
+                  <%= f.submit "Next", class: "btn btn-outline-primary btn-lg" %>
+                </div>
+                <div class="question-count">
+                  <%= @question.content[0] %> / <%= @questions.all.count %> questions answered
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </fieldset>
+    </div>
     </div>
   </div>
 </div>

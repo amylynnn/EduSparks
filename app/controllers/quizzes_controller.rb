@@ -1,5 +1,6 @@
 class QuizzesController < ApplicationController
   before_action :authenticate_user!, only: %i[submit results]
+  helper_method :get_percentage
 
   def index
     @quizzess = Quiz.all
@@ -26,6 +27,12 @@ class QuizzesController < ApplicationController
     redirect_to results_path(submitted_answers)
   end
 
+  def my_quizzes
+    @results = current_user.results
+    @quizzes = @results.map(&:quiz)
+    @quizzes_by_subject = @quizzes.group_by(&:subject)
+  end
+
   def results
     # Récuperer les bonnes réponses depuis la base de données
     # correct_answers = Quiz.find(params[:quiz_id]).questions.map { |question| question.answers.find_by(correct: true).id.to_s }
@@ -41,5 +48,15 @@ class QuizzesController < ApplicationController
 
     # Rediriger l'utilisateur vers la page de résultats
     # render 'results'
+  end
+
+  private
+
+  def get_percentage(result)
+    user_answers = result.user_answers
+    good_answers = user_answers.select { |ua| ua.answer.correct if ua.answer.present? }
+    quiz = result.quiz
+    questions = quiz.questions
+    (good_answers.count.to_f / questions.count.to_f) * 100
   end
 end
