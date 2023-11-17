@@ -27,16 +27,15 @@
 .card-myquiz {
   background-color: #e9d4fc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 30px;
   margin: 10px;
-  border-radius: 8px;
-  width: 250px;
+  border-radius: 20px;
   transition: transform 0.3s ease;
 }
 
-// .card:hover {
-//   transform: scale(1.05);
-// }
+.card-myquiz:hover {
+  transform: scale(1.05);
+}
 
 // p {
 //   font-size: 18px;
