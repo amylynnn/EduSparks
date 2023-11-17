@@ -2,15 +2,15 @@
   <div class="congratulations-box">
     <div class="congratulations-title">
       <% if @percentage >= 70 %>
-        Congratulations! You passed the quiz.😃🎉
+        <p>Congratulations! You passed the quiz.😃🎉</p>
       <% else %>
-      <div class="text-left">
-        Sorry, you did not pass the quiz. Keep pushing! 😔
+        <div class="text-left">
+          <p>Sorry, you did not pass the quiz. Keep pushing! 😔</p>
         </div>
       <% end %>
     </div>
     <div class="answer-info">
-      You got <%= @good_answers.count %> out of <%= @questions.count %> questions correct.
+      <p>You got <%= @good_answers.count %> out of <%= @questions.count %> questions correct.</p>
     </div>
     <div class="progress">
       <div class="progress-bar" role="progressbar" style="width: <%= @percentage %>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
@@ -18,19 +18,14 @@
       </div>
     </div>
     <div class="action-buttons d-flex justify-content-center m-4 gap-4">
-  <%= link_to subject_path(@quiz.subject), class: "btn btn-outline-secondary" do %>
-    Back to Topics
-  <% end %>
-  <%= link_to quiz_question_path(@quiz, @questions.first.id), class: "btn btn-outline-primary" do %>
-    Try Again
-  <% end %>
-
-</div>
-
-    <% if @percentage < 70 %>
-      <div class="correct-answers-box">
-        <%= render "shared/answers-accordion" %>
-      </div>
-    <% end %>
+      <%= link_to subject_path(@quiz.subject), class: "btn btn-outline-secondary" do %>
+        Back to Topics
+      <% end %>
+      <%= link_to quiz_question_path(@quiz, @questions.first.id), class: "btn btn-outline-primary" do %>
+        Try Again
+      <% end %>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">View answers</button>
+    <%= render "shared/answers-accordion" %>
   </div>
 </div>
