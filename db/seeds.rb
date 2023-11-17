@@ -1020,7 +1020,7 @@ subjects = [
 subjects.each do |subject_data|
   subject = Subject.create!(name: subject_data[:name])
   quizzes = subject_data[:quizzes].map do |quiz_data|
-    quiz = subject.quizzes.create(name: quiz_data[:name])
+    quiz = subject.quizzes.create(name: quiz_data[:name], video_url: quiz_data[:video_url])
     quiz_data[:questions].each do |question_data|
       question = quiz.questions.create(content: question_data[:content])
       question_data[:answers].each do |answer_data|
