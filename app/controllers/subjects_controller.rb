@@ -22,7 +22,7 @@ class SubjectsController < ApplicationController
       else
         @quizzes = @subject.quizzes
       end
-      # @response = chatgpt_call(params[:query]) unless params[:query].nil?
+      @response = chatgpt_call(params[:query]) unless params[:query].nil?
     end
   end
 
