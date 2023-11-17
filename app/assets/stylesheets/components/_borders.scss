@@ -1,0 +1,11 @@
+.mytableoverflow{
+  white-space: nowrap;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mytableoverflow:hover {
+  overflow: visible;
+  max-width: 250px;
+  word-break: break-all;
+}
